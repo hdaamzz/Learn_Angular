@@ -1,0 +1,171 @@
+<section id="home" class="vh-100 d-flex align-items-center overflow-hidden"
+    style="background: linear-gradient(rgba(0,0,0,0.5), rgba(248, 100, 100, 0.5)), url('/api/placeholder/1920/1080') center/cover;">
+    <div class="container text-center text-white">
+        <h1 class="display-3 fw-bold mb-4">Welcome to <span class="text-dark">DATA BINDING</span> </h1>
+        <p class="lead mb-4">Your Perfect Home For <span class="text-dark">Data Bindings</span> </p>
+    </div>
+</section>
+
+<!-- Amenities Section -->
+<section id="amenities" class="py-5 overflow-hidden">
+    <div class="container">
+        <h2 class="text-center mb-5">String Interpolation</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{name}}</h5>
+                        <p class="card-text">{{age}}</p>
+                        <p class="card-text">{{truthy}}</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{name}}</h5>
+                        <p class="card-text">{{age}}</p>
+                        <p class="card-text">{{truthy}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="amenities" class="py-5 overflow-hidden">
+    <div class="container">
+        <h2 class="text-center mb-5">Property Bindings</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+
+                    <div class="card-body pt-5 text-center">
+                        <h5 class="card-title" [className]="redColor"> Red Color Text</h5>
+                        <p class="card-text" [className]="yellow"> its a yellow color text</p>
+                        <button [disabled]="isDisabled" class="btn btn-success">Click Me</button>
+                        <p class="card-text" [class.active]="isActive">This text is active</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <img [src]="imageUrl" class="card-img-top" alt="Common Area">
+
+                    <div class="card-body">
+                        <h5 class="card-title" [style.color]="color" [style.fontSize]="fontSize"> Using in-line styling
+                        </h5>
+                        <p class="card-text"></p>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="amenities" class="py-5 overflow-hidden">
+    <div class="container">
+        <h2 class="text-center mb-5">Event Bindings</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+
+                    <div class="card-body pt-5 text-center">
+                        <p class="text-bg-dark">Text copy Event</p>
+                        <h5 class="card-title" (copy)="onGreet('TEXT COPIED')"> Red Color Text</h5>
+                        <p class="text-bg-dark">Input Event</p>
+                        <input (input)="onInput($event)" placeholder="Type something" />
+
+
+                        <p class="card-text text-info">{{text}}</p>
+                        <p class="text-bg-dark">Keypress Event</p>
+                        <input (keypress)="onKeyPress($event)" placeholder="Press a key" />
+
+                        <p class="text-bg-dark">Hover Event</p>
+
+                        <div (mouseover)="onMouseOver()" style="width: 100px;  background-color: lightblue;">
+                            Hover me!
+
+                        </div>
+                        <div *ngIf="hovBtn" style="width: 100px;  background-color: rgb(43, 255, 0);">{{hov}}</div>
+                        <p class="text-bg-dark">click Event</p>
+
+                        <button class="btn btn-success" (click)="onButtonClick()">Click Me</button>
+                        <iframe style="border-radius:12px"
+                            src="https://open.spotify.com/embed/track/4ZklLyx2Dfw0HamIb62Grv?utm_source=generator&theme=0"
+                            width="100%" height="152" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"></iframe>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <img [src]="imageUrl" class="card-img-top" alt="Common Area">
+
+                    <div class="card-body">
+                        <h5 class="card-title" [style.color]="color" [style.fontSize]="fontSize"> Using in-line styling
+                        </h5>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="amenities" class="py-5 overflow-hidden">
+    <div class="container">
+        <h2 class="text-center mb-5">Two Way Bindings</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+
+                    <input type="text" placeholder="TYPE HERE " [(ngModel)]="twowaytext">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+
+                    <div class="card-body">
+                        <h4 class="text-center text-danger text-">
+                            {{twowaytext}}
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>StudentHaven</h5>
+                <p>Your perfect student accommodation solution.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/home" class="text-white">Home</a></li>
+                    <li><a href="/bindings" class="text-white">Amenities</a></li>
+                    <li><a href="/pipe" class="text-white">Rooms</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact Info</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-map-marker-alt me-2"></i>123 University Ave</li>
+                    <li><i class="fas fa-phone me-2"></i>(555) 123-4567</li>
+                    <li><i class="fas fa-envelope me-2"></i>info.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
