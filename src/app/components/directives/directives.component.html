@@ -1,6 +1,84 @@
-<section id="home" class="vh-100 d-flex align-items-center overflow-hidden" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1920/1080') center/cover;">
+<section id="home" class="vh-100 d-flex align-items-center overflow-hidden" style="background: linear-gradient(rgba(255, 0, 0, 0.5), rgb(0, 0, 0)), url('/api/placeholder/1920/1080') center/cover;">
     <div class="container text-center text-white">
-        <h1 class="display-3 fw-bold mb-4">Welcome to STUDENT HOME</h1>
+        <h1 class="display-3 fw-bold mb-4">Welcome to DIRECTIVES</h1>
         <p class="lead mb-4">Your Perfect Home Away From Home</p>
     </div>
 </section>
+
+<section id="amenities" class="py-5 overflow-hidden">
+    <div class="container text-center">
+        <h2 class="text-center mb-5">Structural Directives</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{name}}</h5>
+                        <p class="card-text"></p>
+                        <p class="card-text"></p>
+                        <div *ngIf="isVisible">
+                            This content will only show if isVisible is true
+                          </div>
+                          <ul >
+                            <li *ngFor="let item of disctricts; let i = index">
+                              {{i+1}} - {{item}}
+                            </li>
+                          </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div [ngSwitch]="Value" class="bg-danger">
+                            <p  *ngSwitchCase="'Active'">Active</p>
+                            <p *ngSwitchCase="'Inactive'">Inactive</p>
+                            <p *ngSwitchDefault>Unknown</p>
+                          </div>
+                          <div [ngStyle]="{'color':textColor, 'font-size':fontSize +'px'}">
+                            Styled text
+                          </div>
+                          <div [ngClass]="{'newColor': isActive,'oldMoney':isDisable}">
+                            Dynamic classes
+                          </div>
+                          <p appHighlight highlightColor="indigo">
+                            Hover over this text to see the highlight effect
+                          </p>
+                          <p appTextSize [textSize]="28">
+                            click this text 
+                          </p>
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Learn Angular</h5>
+                <p>Your perfect student accommodation solution.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/home" class="text-white">Home</a></li>
+                    <li><a href="/bindings" class="text-white">Amenities</a></li>
+                    <li><a href="/pipe" class="text-white">Rooms</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact Info</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-map-marker-alt me-2"></i>123 University Ave</li>
+                    <li><i class="fas fa-phone me-2"></i>(555) 123-4567</li>
+                    <li><i class="fas fa-envelope me-2"></i>info.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
