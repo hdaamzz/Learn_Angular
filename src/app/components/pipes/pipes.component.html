@@ -1,0 +1,147 @@
+<section id="home" class="vh-100 d-flex align-items-center overflow-hidden"
+    style="background: linear-gradient(rgba(251, 255, 0, 0.815), rgb(0, 0, 0)), url('/api/placeholder/1920/1080') center/cover;">
+    <div class="container text-center text-white">
+        <h1 class="display-3 fw-bold mb-4">Welcome to <span class="text-dark">PIPES</span> </h1>
+        <p class="lead mb-4">Your Perfect Home Away From Home</p>
+    </div>
+</section>
+
+
+<section id="amenities" class="py-5 overflow-hidden">
+    <div class="container text-center">
+        <h2 class="text-center mb-5">Built in PIPES</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="text-bg-primary">Date Pipe</h3>
+                        <h4 style="color: red;">Normal Date : {{todayDate}}</h4>
+                        <br>
+                        <h5> date:'shortDate' : {{todayDate | date:'shortDate'}}</h5>
+                        <h5> date:'fullDate' : {{todayDate | date:'fullDate'}}</h5>
+                        <h5> date:'dd-mm-yyyy' : {{todayDate | date:'dd-mm-yyyy'}}</h5>
+                        <h5> date:'shortTime' : {{todayDate | date:'shortTime'}}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="text-bg-primary">Upper / Lower Case Pipe</h3>
+                        <h4 style="color: red;">Normal String : {{name}}</h4>
+                        <br>
+                        <h5> uppercase : {{name | uppercase}}</h5>
+                        <h5> lowercase : {{name | lowercase}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="text-bg-primary">Currency Pipe</h3>
+                        <h4 style="color: red;">Normal Amount : {{amount}}</h4>
+                        <br>
+                        <h5> {{amount | currency:'AED' }}</h5>
+                        <h5> {{amount | currency:'USD'}}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="text-bg-primary">JSON Pipe</h3>
+                        <h4 style="color: red;">Normal Json : {{jsons}}</h4>
+                        <br>
+                        <h5>{{jsons | json}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="text-bg-primary">Slice Pipe</h3>
+                        <h4 style="color: red;">Normal String : {{cutter}}</h4>
+                        <br>
+                        <h5>slice:0:14  :  {{cutter | slice:0:14 }}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="text-bg-primary">Percentage Pipe</h3>
+                        <h4 style="color: red;">Normal String : {{percetage}}</h4>
+                        <br>
+                        <h5> {{percetage | percent}}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="text-bg-primary">Async Pipe</h3>
+                        <h4 style="color: red;"> Observable</h4>
+                        <br>
+                        <h5>observableData | async</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="amenities" class="py-5 overflow-hidden">
+    <div class="container text-center">
+        <h2 class="text-center mb-5">Custom PIPES</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <h3 class="text-bg-primary">Custom String Filter Pipe</h3>
+                    <div class="card-body" *ngFor="let item of newArr">
+                        <p>{{item | stringFilter}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Learn Angular</h5>
+                <p>Your perfect student accommodation solution.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/home" class="text-white">Home</a></li>
+                    <li><a href="/bindings" class="text-white">Amenities</a></li>
+                    <li><a href="/pipe" class="text-white">Rooms</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact Info</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-map-marker-alt me-2"></i>123 University Ave</li>
+                    <li><i class="fas fa-phone me-2"></i>(555) 123-4567</li>
+                    <li><i class="fas fa-envelope me-2"></i>info.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
