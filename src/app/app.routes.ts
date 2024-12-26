@@ -25,5 +25,9 @@ export const routes: Routes = [
     {
         path:'pipes',
         component:PipesComponent
+    },
+    {
+        path:'pipes/:id',
+        component:PipesComponent
     }
 ];

@@ -2,9 +2,41 @@
 
 <section id="home" class="vh-100 d-flex align-items-center overflow-hidden" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1920/1080') center/cover;">
     <div class="container text-center text-white">
-        <h1 class="display-3 fw-bold mb-4">Welcome to STUDENT HOME</h1>
+        <h1 class="display-3 fw-bold mb-4">Welcome to STUDENT HOME  {{value$ | async}} <span>{{counter$|async}}</span></h1>
+        <button class="btn rounded-pill btn-success" (click)="incre()">NGRX INCREMENT STATE</button>
+        <button class="btn rounded-pill btn-warning" (click)="Increment()">SUBJECT INCREMENT STATE</button>
+        <button class="btn rounded-pill btn-danger" (click)="reset()">SUBJECT RESET STATE</button>
+
+        <button class="btn rounded-pill btn-primary" (click)="sample()">sample observer</button>
+
+
         <p class="lead mb-4">Your Perfect Home Away From Home</p>
     </div>
+    <div class="container">
+        <h3>User Actions Logger (ReplaySubject Example)</h3>
+        <button class="btn btn-light border-black" (click)="performAction('Button Clicked')">Click Me</button>
+        <button class="btn btn-light border-black"(click)="performAction('Data Saved')">Save Data</button>
+        <button class="btn btn-light border-black"(click)="performAction('Item Deleted')">Delete Item</button>
+        <button class="btn btn-light border-black"(click)="performAction('Item Modify')">Modify Item</button>
+        
+        <h4>Last 2 Actions:</h4>
+        <ul>
+          <li *ngFor="let action of userReplays">{{ action }}</li>
+        </ul>
+  
+        <h4>New Subscriber (will get last 2 actions):</h4>
+        <button class="btn btn-light border-black" (click)="addNewSubscriber()">Add New Subscriber</button>
+      </div>
+      <div class="container">
+        <h3>API Cache (AsyncSubject Example)</h3>
+        <button  class="btn btn-light border-black" (click)="fetchData()">Fetch Data</button>
+        <button  class="btn btn-light border-black" (click)="addNewSubscriber()">Add New Subscriber</button>
+        
+        <div *ngIf="apiResponse">
+          <h4>API Response:</h4>
+          <pre>{{ apiResponse | json }}</pre>
+        </div>
+      </div>
 </section>
 
 <!-- Amenities Section -->

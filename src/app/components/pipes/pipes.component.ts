@@ -1,6 +1,7 @@
 import { AsyncPipe, CommonModule, CurrencyPipe, DatePipe, JsonPipe, LowerCasePipe, PercentPipe, SlicePipe, UpperCasePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StringFilterPipe } from '../../shared/custome-pipes/string-filter.pipe';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pipes',
@@ -9,7 +10,7 @@ import { StringFilterPipe } from '../../shared/custome-pipes/string-filter.pipe'
   templateUrl: './pipes.component.html',
   styleUrl: './pipes.component.css'
 })
-export class PipesComponent {
+export class PipesComponent implements OnInit{
   //these variables are using in in-built pipes
   amount=100;
   name="hd-aamzz";
@@ -20,6 +21,18 @@ export class PipesComponent {
 
   //custom pipes
   newArr=["malappuram",10,"Kerala",14,"India"]
+  
+  constructor(private route :ActivatedRoute){}
 
+  idParam!:string | null;
+  
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params=>
+    {
+      this.idParam=params.get('id')
+    }
+    )
+  }
+  
 
 }
